@@ -1,0 +1,31 @@
+@baseUrl = http://localhost:3000
+@apiEndpoint = api/v1/home-section
+
+###
+
+GET {{baseUrl}}/{{apiEndpoint}} HTTP/1.1
+
+###
+
+PUT {{baseUrl}}/{{apiEndpoint}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Karnam Shyam Updated",
+    "description": "Welcome to my updated portfolio website!",
+    "typingPhrases": [
+        "Full-Stack Developer",
+        "Open Source Enthusiast",
+        "Tech Blogger",
+        "Mentor"
+    ],
+    "primaryButtonText": "View My Work",
+    "primaryButtonLink": "/work",
+    "secondaryButtonText": "Get in Touch",
+    "secondaryButtonLink": "/get-in-touch"
+}
+
+###
+
+DELETE {{baseUrl}}/{{apiEndpoint}} HTTP/1.1
+

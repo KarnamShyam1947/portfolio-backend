@@ -1,0 +1,45 @@
+@baseUrl = http://localhost:3000
+@apiEndpoint = api/v1/project
+@id = 6957ab65c6f299569061f3fd
+
+###
+
+GET {{baseUrl}}/{{apiEndpoint}} HTTP/1.1
+
+### 
+
+POST {{baseUrl}}/{{apiEndpoint}} HTTP/1.1
+Content-Type: application/json 
+
+{
+    "title": "New Project",
+    "description": "This is a new project.",
+    "image": "project_image.png",
+    "images": [
+        {"url": "image1.png", "subtitle": "First Image"},
+        {"url": "image2.png", "subtitle": "Second Image"}
+    ],
+    "categories": ["all"],
+    "technologies": ["React", "Node.js", "MongoDB"],
+    "liveUrl": "http://liveproject.com",
+    "githubUrl": "http://github.com",
+    "overview": "An overview of the new project."
+}
+
+###
+
+GET {{baseUrl}}/{{apiEndpoint}}/{{id}} HTTP/1.1
+
+###
+
+PUT {{baseUrl}}/{{apiEndpoint}}/{{id}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "featured": true
+}
+
+###
+
+DELETE {{baseUrl}}/{{apiEndpoint}}/{{id}} HTTP/1.1
+

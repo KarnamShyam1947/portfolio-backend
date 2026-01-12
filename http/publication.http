@@ -1,0 +1,39 @@
+@baseUrl = http://localhost:3000
+@id = 695794839b9a29d6391af6fe
+
+GET {{baseUrl}}/api/v1/publication HTTP/1.1
+
+###
+
+POST {{baseUrl}}/api/v1/publication HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "New Publication",
+    "authors": ["Author1", "Author2"],
+    "journal": "some international journal",
+    "year": 2024,
+    "doi": "10.1000/newpub2024",
+    "keywords": ["keyword1", "keyword2"],
+    "type": "journal",
+    "status": "under-review",
+    "link": "http://example.com/newpublication"  
+}
+
+###
+
+GET {{baseUrl}}/api/v1/publication/{{id}} HTTP/1.1
+
+###
+
+PUT {{baseUrl}}/api/v1/publication/{{id}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "status": "published",
+    "link": "http://example.com/updatedpublication"
+}
+
+###
+
+DELETE {{baseUrl}}/api/v1/publication/{{id}} HTTP/1.1

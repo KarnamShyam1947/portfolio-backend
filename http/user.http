@@ -1,0 +1,15 @@
+@baseUrl=http://localhost:3000
+@apiEndpoint=api/v1/user
+@jwt = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NTdhNTIxYTVhYjYzNWRhYTY4NjZmNSIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJpYXQiOjE3NjczNTE3MDAsImV4cCI6MTc2NzM3MzMwMH0.uUOB2nK5CZPrTSssJeYV2P50MUMqt37J4Ryb223GMyc
+
+###
+
+POST {{baseUrl}}/{{apiEndpoint}}/change-password HTTP/1.1
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+
+{
+    "currentPassword": "$trongP@ssw0rd!",
+    "newPassword": "N3wP@ssw0rd!",
+    "reEnterPassword": "N3wP@ssw0rd!"
+}

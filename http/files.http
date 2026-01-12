@@ -1,0 +1,13 @@
+### Upload Image (multipart/form-data)
+
+curl -X POST http://localhost:3000/api/v1/upload \
+  -F "image=@test.png"
+
+### 
+
+DELETE http://localhost:3000/api/v1/upload
+Content-Type: application/json
+
+{
+  "url": "https://res.cloudinary.com/du6sxhcej/image/upload/v1767352571/dynamic-portfolio/test_1767352568659.png"
+}

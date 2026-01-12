@@ -1,0 +1,43 @@
+@baseUrl = http://localhost:3000
+@id = 69578fc040c4d8dc4a964f73
+
+GET {{baseUrl}}/api/v1/experience HTTP/1.1
+
+###
+
+POST {{baseUrl}}/api/v1/experience HTTP/1.1
+Content-Type: application/json
+
+{
+    "period": "2015 - 2019",
+    "role": "Bachelor of Science in Computer Science",
+    "company": "VIT-AP University",
+    "points": [
+        "Graduated with honors",
+        "Member of the Computer Science Club"
+    ]
+}
+
+###
+
+GET {{baseUrl}}/api/v1/experience/{{id}} HTTP/1.1
+
+###
+
+PUT {{baseUrl}}/api/v1/experience/{{id}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "period": "2015 - 2019",
+    "role": "Bachelor of Science in Computer Science",
+    "company": "updated company name",
+    "points": [
+        "Graduated with honors",
+        "Member of the Computer Science Club",
+        "Dean's List for 4 semesters"
+    ]
+}
+
+###
+
+DELETE {{baseUrl}}/api/v1/experience/{{id}} HTTP/1.1

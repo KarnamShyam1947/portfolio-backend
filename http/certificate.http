@@ -1,0 +1,43 @@
+@baseUrl = http://localhost:3000
+@id = 69578688c4e9a25e217e9126
+
+GET {{baseUrl}}/api/v1/certificate HTTP/1.1
+
+###
+
+POST {{baseUrl}}/api/v1/certificate HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "New Certificate",
+    "issuer": "Certification Authority",
+    "date": "2024-06-01",
+    "skills": ["Skill A", "Skill B"],
+    "credentialId": "1234567890",
+    "image": "http://example.com/certificate/1234567890",
+    "link": "http://example.com/certificate/1234567890"
+}
+
+###
+
+GET {{baseUrl}}/api/v1/certificate/{{id}} HTTP/1.1
+
+###
+
+PUT {{baseUrl}}/api/v1/certificate/{{id}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Updated Certificate Title",
+    "issuer": "Updated Certification Authority",
+    "date": "2024-07-01",
+    "skills": ["Updated Skill A", "Updated Skill B"],
+    "credentialId": "0987654321",
+    "image": "http://example.com/certificate/0987654321",
+    "link": "http://example.com/certificate/0987654321"
+}
+
+###
+
+DELETE {{baseUrl}}/api/v1/certificate/{{id}} HTTP/1.1
+

@@ -1,0 +1,42 @@
+@baseUrl = http://localhost:3000
+@id = 695790dc40c4d8dc4a964f8d
+
+GET {{baseUrl}}/api/v1/skill HTTP/1.1
+
+###
+
+POST {{baseUrl}}/api/v1/skill HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Frontend",
+    "icon": "Advanced",
+    "skills": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+    ]
+}
+
+###
+
+GET {{baseUrl}}/api/v1/skill/{{id}} HTTP/1.1
+
+### 
+
+PUT {{baseUrl}}/api/v1/skill/{{id}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "skills": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React"
+    ]
+}
+
+###
+
+DELETE {{baseUrl}}/api/v1/skill/{{id}} HTTP/1.1
+
