@@ -3,13 +3,11 @@ const { getProjects, createProject, updateProject, deleteProject, getProject } =
 
 const router = express.Router();
 
-router.route('/')
-    .get(getProjects)
-    .post(createProject);
+router.get("/", getProjects)
+router.post("/", createProject);
 
-router.route('/:id')
-    .get(getProject)
-    .put(updateProject)
-    .delete(deleteProject);
+router.get("/:id", getProject)
+router.put("/:id", updateProject)
+router.delete("/:id", deleteProject);
 
 module.exports = router;

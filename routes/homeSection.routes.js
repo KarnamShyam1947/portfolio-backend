@@ -7,9 +7,8 @@ const {
 
 const router = express.Router();
 
-router.route('/')
-    .get(getHomeSection)
-    .put(updateHomeSection)
-    .delete(deleteHomeSection);
+router.get("/", getHomeSection)
+router.put("/", updateHomeSection)
+router.delete("/", deleteHomeSection);
 
 module.exports = router;

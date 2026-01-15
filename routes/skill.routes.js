@@ -3,13 +3,11 @@ const { getSkills, createSkill, getSkill, updateSkill, deleteSkill } = require('
 
 const router = express.Router();
 
-router.route('/')
-    .get(getSkills)
-    .post(createSkill);
+router.get("/", getSkills)
+router.post("/", createSkill);
 
-router.route('/:id')
-    .get(getSkill)    
-    .put(updateSkill)    
-    .delete(deleteSkill); 
+router.get("/:id", getSkill)    
+router.put("/:id", updateSkill)    
+router.delete("/:id", deleteSkill); 
 
 module.exports = router;

@@ -9,13 +9,11 @@ const {
 
 const router = express.Router();
 
-router.route('/')
-    .get(getPublications)
-    .post(createPublication);
+router.get("/", getPublications)
+router.post("/", createPublication);
 
-router.route('/:id')
-    .get(getPublication)
-    .put(updatePublication)
-    .delete(deletePublication);
+router.get("/:id", getPublication)
+router.put("/:id", updatePublication)
+router.delete("/:id", deletePublication);
 
 module.exports = router;

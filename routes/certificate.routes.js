@@ -21,18 +21,15 @@ const router = express.Router();
  *       content:
  *         application/json:
  *           schema:
- *             type: object
- *             properties:
- *               email:
- *                 type: string
- *               password:
- *                 type: string
+ *             $ref: '#/components/schemas/CertificateRequest'
  *     responses:
  *       201:
  *         description: Created
+ *       409:
+ *         description: Certificate already exists
  */
-router.get("/", getCertificates);
 router.post("/", createCertificate);
+router.get("/", getCertificates);
 
 router.get("/:id", getCertificate);
 router.put("/:id", updateCertificate);

@@ -8,13 +8,11 @@ const {
 
 const router = express.Router();
 
-router.route("/")
-    .get(getAllExperiences)
-    .post(createExperience);
+router.get("/", getAllExperiences)
+router.post("/", createExperience);
 
-router.route("/:id")
-    .get(getExperience)
-    .put(updateExperience)
-    .delete(deleteExperience);
+router.get("/:id", getExperience)
+router.put("/:id", updateExperience)
+router.delete("/:id", deleteExperience);
 
 module.exports = router;

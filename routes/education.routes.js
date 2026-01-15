@@ -9,13 +9,28 @@ const {
 
 const router = express.Router();
 
-router.route("/")
-    .get(getEducations)
-    .post(createEducation);
+/**
+ * @openapi
+ * /api/v1/Education:
+ *   post:
+ *     tags:
+ *       - Education
+ *     summary: Create Education
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/EducationRequest'
+ *     responses:
+ *       201:
+ *         description: Created
+ */
+router.post("/", createEducation);
+router.get("/", getEducations)
 
-router.route("/:id")
-    .get(getEducation)
-    .put(updateEducation)
-    .delete(deleteEducation);
+router.get("/:id", getEducation)
+router.put("/:id", updateEducation)
+router.delete("/:id", deleteEducation);
 
 module.exports = router;
