@@ -17,7 +17,27 @@
  *           description: The user's password.
  *           example: password123
  * 
- *     CertificateRequest:
+ *     ChangePasswordRequest:
+ *       type: object
+ *       required:
+ *         - currentPassword
+ *         - newPassword
+ *         - reEnterPassword
+ *       properties:
+ *         currentPassword:
+ *           type: string
+ *           description: The user's Current Password.
+ *           example: password123
+ *         newPassword:
+ *           type: string
+ *           description: The user's New Password.
+ *           example: password123
+ *         reEnterPassword:
+ *           type: string
+ *           description: The user's New Password Confirmation.
+ *           example: password123
+ * 
+ *     CertificateApiSchema:
  *       type: object
  *       required:
  *         - title
@@ -38,7 +58,7 @@
  *           description: The date the certificate was issued.
  *           example: 2023-01-15
  * 
- *     EducationRequest:
+ *     EducationApiSchema:
  *       type: object
  *       required:
  *         - degree
@@ -48,23 +68,53 @@
  *       properties:
  *         degree:
  *           type: string
- *           description: The name of the degree or qualification obtained or being pursued.
+ *           description: The name of the degree or qualification.
  *           example: Bachelor of Science in Computer Science
  *         institution:
  *           type: string
- *           description: The name of the educational institution where the degree was completed or is being pursued.
+ *           description: The name of the educational institution.
  *           example: Indian Institute of Technology Delhi
  *         period:
  *           type: string
- *           description: The time period during which the education was or is being completed (e.g., start and end dates).
+ *           description: The time period of the education.
  *           example: 2019-08 to 2023-05
  *         points:
  *           type: array
  *           items:
  *             type: string
- *           description: A list of key highlights, achievements, or details about the degree (e.g., GPA, major projects).
+ *           description: Key highlights or achievements.
  *           example:
- *             - GPA - 9.2/10
- *             - Major project - Machine Learning based Recommendation System
- *             - Relevant coursework - Data Structures, Algorithms, Databases
+ *             - Point 1
+ *             - Point 2
+ *             - Point 3
+ * 
+ *     ExperienceApiSchema:
+ *       type: object
+ *       required:
+ *         - role
+ *         - company
+ *         - period
+ *         - points
+ *       properties:
+ *         role:
+ *           type: string
+ *           description: The job title or role held.
+ *           example: Software Engineer
+ *         company:
+ *           type: string
+ *           description: The company or organization name.
+ *           example: Tech Solutions Ltd
+ *         period:
+ *           type: string
+ *           description: The period of employment.
+ *           example: 2022-03 to 2024-01
+ *         points:
+ *           type: array
+ *           items:
+ *             type: string
+ *           description: Key responsibilities or achievements.
+ *           example:
+ *             - Point 1
+ *             - Point 2
+ *             - Point 3
  */
